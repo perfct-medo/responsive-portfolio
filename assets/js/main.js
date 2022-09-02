@@ -82,6 +82,9 @@ secIcons.forEach((e) => {
       e.classList.remove("active__link");
     });
     e.classList.add("active__link");
+    setTimeout(() => {
+      e.classList.remove("active__link");
+    }, 700);
   });
 });
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
@@ -95,7 +98,7 @@ const scrollActive = () => {
       sectionTop = current.offsetTop - 58,
       sectionId = current.getAttribute("id"),
       sectionsClass = document.querySelector(
-        ".nav__menu a[href*=" + sectionId + "]"
+        `.nav__menu a[href*="#${sectionId}"]`
       );
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
